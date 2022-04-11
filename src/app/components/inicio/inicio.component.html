@@ -1,0 +1,53 @@
+<div class="container">
+  <h1 class="titulo">Administracion de Galeria y Proyectos</h1>
+  <button class="btn btn-primary cambiar" (click)="ver=!ver">Cambiar <i class="icon ion-md-repeat"></i></button>
+  <div class="" *ngIf="ver">
+    <button class="btn btn-success agregar" routerLink="/operG">Agregar Foto</button>
+    <div class="col-sm-12">
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <td colspan="3" align="center"><h3>Galeria</h3></td>
+          </tr>
+          <tr>
+            <td>Titulo</td>
+            <td>Descripción</td>
+            <td>Imagen</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="cursor: pointer;" *ngFor="let g of gallerys" [routerLink]="['/operG',g._id]">
+            <td>{{g.titulo}}</td>
+            <td>{{g.descrip}}</td>
+            <td><img src="{{g.imagen}}" width="150px"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row" *ngIf="!ver">
+    <button class="btn btn-success agregar" routerLink="/operP">Agregar Proyecto</button>
+    <div class="col-sm-12">
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <td colspan="3" align="center"><h3>Proyectos</h3></td>
+          </tr>
+          <tr>
+            <td>Titulo</td>
+            <td>Descripción</td>
+            <td>Imagen</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of projects" style="cursor: pointer;" [routerLink]="['/operP',p._id]">
+            <td>{{p.titulo}}</td>
+            <td>{{p.descrip}}</td>
+            <td><img src="{{p.image}}" width="150px"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,46 @@
+.botones{
+  text-align: center;
+}
+
+.botones button{
+  border-radius: 15px;
+  margin: 10px;
+}
+
+h1{
+  text-align: center;
+  padding-top: 25px;
+  color: #fff;
+  padding-bottom: 30px;
+}
+
+label{
+  color: #fff;
+  font-size: 18px;
+  padding-top: 10px;
+}
+
+h1::after{
+  content: "";
+  height: 4px;
+  width: 300px;
+  background-color:var(--main-color);
+  border-radius: 3px;
+  position: relative;
+  display: block;
+  margin: auto;
+}
+
+.regresar{
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.loading img{
+  width: 180px;
+}
+
+.loading{
+  padding-top: 50px;
+  text-align: center;
+}

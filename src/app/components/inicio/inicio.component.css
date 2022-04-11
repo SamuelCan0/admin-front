@@ -1,0 +1,31 @@
+.agregar,
+.cambiar{
+  margin: 5px 5px 5px 5px;
+  width: fit-content;
+  border-radius: 15px;
+}
+
+.agregar{
+
+}
+
+h1{
+  padding-top: 25px;
+  text-align: center;
+}
+
+.titulo{
+  color: #fff;
+
+}
+
+.titulo::after{
+  content: "";
+  height: 4px;
+  width: 300px;
+  background-color:var(--main-color);
+  border-radius: 3px;
+  position: relative;
+  display: block;
+  margin: auto;
+}

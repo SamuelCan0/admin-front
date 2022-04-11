@@ -1,0 +1,35 @@
+<h1>Proyectos</h1>
+<div class="container" *ngIf="!load">
+  <button class="btn btn-danger regresar" routerLink="/inicio"><i class="icon ion-md-arrow-back"></i> Regresar</button>
+  <div class="col-sm-12">
+    <form #projectForm="ngForm" onsubmit="onSubmit(projectForm)">
+      <div class="form-group">
+        <label>Titulo</label>
+        <input class="form-control" type="text" required [(ngModel)]="project.titulo" #titulo="ngModel" [ngModelOptions]="{standalone: true}"/>
+        <label>Descripcion</label>
+        <textarea class="form-control" type="" required [(ngModel)]="project.descrip" #descrip="ngModel" [ngModelOptions]="{standalone: true}"></textarea>
+        <label>Imagen</label>
+        <ngx-dropzone (change)="onSelect($event)">
+          <ngx-dropzone-label>Selecciona La Imagen</ngx-dropzone-label>
+          <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of fotoP" [file]="f" [removable]="true" (removed)="onRemove(f)" >
+            <ngx-dropzone-label></ngx-dropzone-label>
+          </ngx-dropzone-image-preview>
+        </ngx-dropzone>
+        <br>
+        <a href="{{project.image}}" class="btn btn-success" target="_blank" rel="noopener noreferrer" *ngIf="b">
+          Ver Imagen Actual
+      </a>
+      </div>
+    </form>
+    <hr>
+    <div class="botones">
+    <button class="btn btn-success" *ngIf="!b" (click)="saveP()">Agregar <i class="icon ion-md-add"></i></button>
+    <button class="btn btn-primary" *ngIf="b" (click)="updateP()">Actualizar <i class="icon ion-md-cloud-upload"></i></button>
+    <button class="btn btn-danger" *ngIf="b" (click)="deleteP()">Eliminar <i class="icon ion-md-trash"></i></button>
+    </div>
+  </div>
+</div>
+<div class="container loading" *ngIf="load">
+  <img src="./assets/loading.gif" alt="">
+</div>
+

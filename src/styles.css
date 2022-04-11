@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr';
+:root{
+  --main-color:#e4007c;
+  --black:#29292b;
+  --bg:#3e5f8a;
+  --verde: #00bb2d;
+  --border:.1rem solid #fff;
+
+}
+
+*{
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+html{
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+  width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+  background: #fff;
+  border-radius: 5rem;
+}
+
+body{
+  background: var(--bg);
+}
